@@ -1,4 +1,28 @@
 {
   "name": "miauApp",
-  "displayName": "miauApp"
+  "displayName": "miauApp",
+  "packagerOpts": {
+    "config": "metro.config.js",
+    "sourceExts": [
+      "js",
+      "jsx",
+      "ts",
+      "tsx",
+      "json",
+      "svg",
+      "png",
+      "jpg",
+      "jpeg",
+      "gif",
+      "ttf",
+      "otf",
+      "mp4",
+      "webm",
+      "wav",
+      "mp3",
+      "m4a",
+      "aac",
+      "oga"
+    ]
+  }
 }
