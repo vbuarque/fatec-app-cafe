@@ -15,8 +15,10 @@
     "@fortawesome/free-regular-svg-icons": "^6.2.0",
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-native-fontawesome": "^0.3.0",
+    "@react-native-community/google-signin": "^5.0.0",
+    "@react-native-firebase/app": "^15.6.0",
     "react": "18.1.0",
-    "react-native": "0.70.1",
+    "react-native": "0.70.2",
     "react-native-svg": "^13.2.0",
     "styled-components": "^5.3.5"
   },
