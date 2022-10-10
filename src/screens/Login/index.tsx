@@ -1,63 +1,58 @@
 import React from "react";
 import {
   Container,
-  HeaderLogo,
-  TitleContainer,
-  TitleTop,
-  TitleMid,
-  TitleBottom,
-  TextPink,
   Image,
-  FooterButton,
-  ButtonGoogle,
-  ButtonFacebook,
-  TitleFacebook,
-  TitleGoogle,
-  ImageContainer,
+  ContainerImage,
+  StyledButtonGoogle,
+  StyledButtonFacebook,
+  StyledText,
+  ContainerButton,
+  ContainerText,
+  TextPink,
+  MainText,
 } from "./styles";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faFacebookF, faGoogle } from "@fortawesome/free-brands-svg-icons";
 
 import Logo from "../../assets/images/LogoMiau.svg";
 
 import ImageCat from "../../assets/images/catImageLogin.png";
+import GoogleLogo from "../../assets/icons/googleIcon.svg";
+import FacebookLogo from "../../assets/icons/facebookIcon.svg";
+
+import { Text } from "react-native";
 
 export default function Login() {
   return (
     <Container>
-      <HeaderLogo>
-        <Logo />
-      </HeaderLogo>
-
-      <ImageContainer>
+      <Logo />
+      <ContainerImage>
         <Image source={ImageCat} />
-      </ImageContainer>
+      </ContainerImage>
 
-      <TitleContainer>
-        <TitleTop>
-        Tome um <TextPink>cafézinho</TextPink> enquanto
-        </TitleTop>
+      <ContainerText>
+        <MainText>
+          <TextPink>Tome um cafézinho</TextPink> enquanto
+        </MainText>
 
-        <TitleMid>
+        <MainText> 
           faz <TextPink>carinho</TextPink> nos
-        </TitleMid>
+        </MainText>
 
-        <TitleBottom>
-        <TextPink>gatinhos.</TextPink>
-        </TitleBottom>
-      </TitleContainer>
+        <MainText>
+          <TextPink>gatinhos.</TextPink>
+        </MainText>
+      </ContainerText>
 
-      <FooterButton>
-        <ButtonGoogle activeOpacity={0.8} >
-          <FontAwesomeIcon icon={faGoogle} color="white" />
-          <TitleGoogle>Acesse com o Google</TitleGoogle>
-        </ButtonGoogle>
+      <ContainerButton>
+        <StyledButtonGoogle >
+          <GoogleLogo />
+          <Text>Logar com o Google</Text>
+        </StyledButtonGoogle>
 
-        <ButtonFacebook activeOpacity={0.8}>
-          <FontAwesomeIcon icon={faFacebookF} color="white" />
-          <TitleFacebook>Acesse com o Facebook</TitleFacebook>
-        </ButtonFacebook>
-      </FooterButton>
+        <StyledButtonFacebook >
+          <FacebookLogo />
+          <StyledText>Logar com o Facebook</StyledText>
+        </StyledButtonFacebook>
+      </ContainerButton>
     </Container>
   );
 }
