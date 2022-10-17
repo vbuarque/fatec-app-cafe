@@ -45,12 +45,12 @@ export default function Login() {
       <ContainerButton>
         <StyledButtonGoogle >
           <GoogleLogo />
-          <Text>Logar com o Google</Text>
+          <Text>Faça login no Google</Text>
         </StyledButtonGoogle>
 
         <StyledButtonFacebook >
           <FacebookLogo />
-          <StyledText>Logar com o Facebook</StyledText>
+          <StyledText>Continuar com o facebook</StyledText>
         </StyledButtonFacebook>
       </ContainerButton>
     </Container>
