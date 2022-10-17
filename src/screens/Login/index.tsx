@@ -20,7 +20,11 @@ import FacebookLogo from "../../assets/icons/facebookIcon.svg";
 
 import { Text } from "react-native";
 
-export default function Login() {
+export default function Login({ navigation }: any) {
+  function openScreen() {
+    navigation.navigate("Home");
+  }
+
   return (
     <Container>
       <Logo />
@@ -43,7 +47,7 @@ export default function Login() {
       </ContainerText>
 
       <ContainerButton>
-        <StyledButtonGoogle >
+        <StyledButtonGoogle onPress={openScreen}>
           <GoogleLogo />
           <Text>Faça login no Google</Text>
         </StyledButtonGoogle>
