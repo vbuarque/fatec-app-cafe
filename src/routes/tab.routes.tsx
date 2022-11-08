@@ -1,9 +1,9 @@
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import { Login } from '../screens/Login';
 import { Home } from '../screens/Home';
 
-const { Navigator, Screen } = createNativeStackNavigator();
+const { Navigator, Screen } = createBottomTabNavigator();
 
 export function StackRoutes() {
     return(

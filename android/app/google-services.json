@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "873757251805",
+    "project_id": "miau-app-1cebf",
+    "storage_bucket": "miau-app-1cebf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:873757251805:android:93e51b460906a37c06a334",
+        "android_client_info": {
+          "package_name": "com.vinicius.miauapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "873757251805-vtb6o2vbj4r7nfft36114neo10tcthbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABsOVcnoE7tGEhQAZZQa2MpxYUAIvwlO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "873757251805-vtb6o2vbj4r7nfft36114neo10tcthbs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,13 @@
 import styled from "styled-components/native";
+import {theme} from '../../styles/theme';
 
 export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: space-between;
   padding: 30px;
+
+  background-color: ${theme.colors.background};
 `;
 
 export const Image = styled.Image`

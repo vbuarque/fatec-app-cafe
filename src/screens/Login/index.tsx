@@ -12,17 +12,20 @@ import {
   MainText,
 } from "./styles";
 
-import Logo from "../../assets/images/LogoMiau.svg";
+import Logo from "../../assets/icons/LogoMiau.svg";
 
 import ImageCat from "../../assets/images/catImageLogin.png";
 import GoogleLogo from "../../assets/icons/googleIcon.svg";
 import FacebookLogo from "../../assets/icons/facebookIcon.svg";
 
 import { Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-export default function Login({ navigation }: any) {
+export function Login() {
+  const navigation = useNavigation();
+
   function openScreen() {
-    navigation.navigate("Home");
+    navigation.navigate('Home');
   }
 
   return (
@@ -52,7 +55,7 @@ export default function Login({ navigation }: any) {
           <Text>Faça login no Google</Text>
         </StyledButtonGoogle>
 
-        <StyledButtonFacebook >
+        <StyledButtonFacebook>
           <FacebookLogo />
           <StyledText>Continuar com o facebook</StyledText>
         </StyledButtonFacebook>
