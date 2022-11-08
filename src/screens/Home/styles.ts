@@ -4,7 +4,7 @@ import {theme} from '../../styles/theme';
 export const Container = styled.View`
     flex: 1;
     padding: 18px;
-    background-color: ${theme.colors.background};
+    background-color: ${theme.colors.background.primary};
 `;
 
 export const Header = styled.View`

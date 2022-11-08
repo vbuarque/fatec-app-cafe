@@ -7,7 +7,7 @@ export const Container = styled.View`
   justify-content: space-between;
   padding: 30px;
 
-  background-color: ${theme.colors.background};
+  background-color: ${theme.colors.background.primary};
 `;
 
 export const Image = styled.Image`
@@ -15,8 +15,7 @@ export const Image = styled.Image`
   height: 277px;
 `;
 
-export const ContainerImage = styled.View`
-`;
+export const ContainerImage = styled.View``;
 
 export const StyledButtonGoogle = styled.TouchableOpacity`
   align-items: center;
@@ -28,7 +27,7 @@ export const StyledButtonGoogle = styled.TouchableOpacity`
   
   background-color: #FFFFFF;
 
-  border-radius: 8px;
+  border-radius: 4px;
   border: 1px solid #e1e1e1;
 
   margin-bottom: 10px;
@@ -45,7 +44,7 @@ height: 48px;
 
 background-color: #1877F2;
 
-border-radius: 8px;
+border-radius: 4px;
 border: 1px solid #e1e1e1;
 
 color: #FFFFFF;

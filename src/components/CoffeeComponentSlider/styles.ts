@@ -16,5 +16,7 @@ export const CoffeComponent = styled.View`
 export const ImageCoffee = styled.Image`
     width: 100%;
     height: 100%;
+
+    border-radius: 8px;
 `;
 

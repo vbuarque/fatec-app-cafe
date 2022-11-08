@@ -10,7 +10,6 @@ import {
 } from "./styles";
 
 import { Avatar } from "native-base";
-import {ScrollView} from 'react-native';
 import { Coffee, Cat, Cookie, Heart } from 'phosphor-react-native';
 import { CategorieButton } from '../../components/CategorieButton';
 import { CoffeeComponentSlider } from '../../components/CoffeeComponentSlider';
