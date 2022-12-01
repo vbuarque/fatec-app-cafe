@@ -3,11 +3,11 @@ import { Text } from 'react-native';
 import CustomHeader from '../../components/CustomHeader';
 import { Container } from './styles';
 
-export function CandyStore() {
+export function Pets() {
   return (
     <Container>
-      <CustomHeader title='Doces'/>
-      	<Text>Candys Store</Text>
+      <CustomHeader title='Para o seu pet'/>
+        <Text>Pets</Text>
     </Container>
   );
 }

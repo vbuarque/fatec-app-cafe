@@ -6,10 +6,11 @@ import {
   Head,
   Categories,
   GridButton,
-  CoffeeSlider
+  CoffeeSlider,
+  ButtonWidth
 } from "./styles";
 import { useNavigation } from "@react-navigation/native";
-import { Avatar, ScrollView } from "native-base";
+import { Avatar } from "native-base";
 import { Coffee, Cat, Cookie, Heart } from 'phosphor-react-native';
 import { CategoriesButton } from '../../components/CategoriesButton';
 import { CoffeeComponentSlider } from '../../components/CoffeeComponentSlider';
@@ -18,14 +19,13 @@ const Img = require("../../assets/images/imgMockProduct.jpg");
 const Img2 = require("../../assets/images/CoffeeMockImage.png");
 
 export function Home() {
-  const navigation = useNavigation();
+  const navigation = useNavigation()
 
-  function openScreenCandy() {
-    navigation.navigate('CandyStore');
+  function handleNavigateToCoffee() {
+    navigation.navigate('Coffee')
   }
 
   return (
-    <ScrollView>
       <Container>
         <Header>
           <TextUserName>Ola Vinicius</TextUserName>
@@ -35,24 +35,53 @@ export function Home() {
         <Head>Categorias</Head>
         <Categories>
           <GridButton>
-            <CategoriesButton title="Cafés" icon={Coffee}/>
-            <CategoriesButton title="Doceria" icon={Cookie} onPress={openScreenCandy}/>
+            <ButtonWidth>
+              <CategoriesButton
+                icon={Coffee}
+                title={'Café'}
+
+                onPress={() => navigation.navigate('Coffee')}
+              />
+            </ButtonWidth>
+            <ButtonWidth>
+              <CategoriesButton
+                icon={Cat}
+                title={'Pet'}
+
+                onPress={() => navigation.navigate('Pets')}
+              />
+            </ButtonWidth>
           </GridButton>
+        
+
           <GridButton>
-            <CategoriesButton title="Para o seu pet" icon={Cat} />
-            <CategoriesButton title="Adote" icon={Heart}/>
+          <ButtonWidth>
+            <CategoriesButton
+              icon={Cookie}
+              title={'Doces'}
+
+              onPress={() => navigation.navigate('CandyStore')}
+            />
+          </ButtonWidth>
+          <ButtonWidth>
+            <CategoriesButton
+              icon={Heart}
+              title={'Outros'}
+
+              onPress={() => navigation.navigate('Adopt')}
+            />
+          </ButtonWidth>
           </GridButton>
         </Categories>
         <Head>Cafés mais pedidos</Head>
         <CoffeeSlider horizontal={true} showsHorizontalScrollIndicator={false}>
-          <CoffeeComponentSlider  image={Img2}/>
-          <CoffeeComponentSlider  image={Img2}/>
-          <CoffeeComponentSlider  image={Img2}/>
-          <CoffeeComponentSlider  image={Img2}/>
-          <CoffeeComponentSlider  image={Img2}/>
-          <CoffeeComponentSlider  image={Img2}/>
+          <CoffeeComponentSlider image={Img2} />
+          <CoffeeComponentSlider image={Img2} />
+          <CoffeeComponentSlider image={Img2} />
+          <CoffeeComponentSlider image={Img2} />
+          <CoffeeComponentSlider image={Img2} />
+          <CoffeeComponentSlider image={Img2} />
         </CoffeeSlider>
       </Container>
-    </ScrollView>
   );
 }

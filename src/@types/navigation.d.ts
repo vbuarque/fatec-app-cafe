@@ -6,6 +6,8 @@ export declare global {
       Adopt: undefined;
       CandyStore: undefined;
       Profile: undefined;
+      Pets: undefined;
+      Coffee: undefined;
     }
   }
 }

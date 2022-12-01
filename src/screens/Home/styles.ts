@@ -3,8 +3,9 @@ import {theme} from '../../styles/theme';
 
 export const Container = styled.View`
     flex: 1;
-    padding: 18px;
+    height: 100%;
     background-color: ${theme.colors.background.primary};
+    padding: 32px 18px;
 `;
 
 export const Header = styled.View`
@@ -19,14 +20,14 @@ export const Header = styled.View`
 export const TextUserName = styled.Text`
     font-size: 24px;
     font-weight: bold;
-    color: #29292E;
+    color: ${theme.colors.secondary};
 `;
 
 export const ImageProduct = styled.Image`
     width: 100%;
     height: 144px;
 
-    border: 1px solid #F292A9;
+    border: 1px solid ${theme.colors.primary};
     border-radius: 8px;
 
     margin: 24px 0 24px 0;
@@ -35,24 +36,26 @@ export const ImageProduct = styled.Image`
 export const Head = styled.Text`
     font-size: 16px;
     font-weight: bold;
-    color: #29292E;
+
+    margin-bottom: 8px;
+    color: ${theme.colors.secondary};
 `;
 
-export const Categories = styled.View`
-    justify-content: center;
-    align-items: center;
-    margin: 24px 0 0 0;
-`;
+export const Categories = styled.View``;
 
 export const GridButton = styled.View`
-    justify-content: center;
-    align-items: center;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    
+`;
+
+export const ButtonWidth = styled.View`
+    width: 45%;
     margin-bottom: 24px;
 `;
 
 export const CoffeeSlider = styled.ScrollView`
-    margin-top: 24px;
+    width: 100%;
+    height: 100%;
 `;

@@ -7,7 +7,7 @@ export const CategoriesStyledButton = styled.TouchableOpacity`
     flex-direction: row;
 
     padding: 16px;
-    width: 180px;
+    width: 100%;
     height: 56px;
 
     background-color: ${theme.colors.background.secondary};

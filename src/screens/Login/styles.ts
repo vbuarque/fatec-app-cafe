@@ -5,7 +5,7 @@ export const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: space-between;
-  padding: 30px;
+  padding: 60px 18px 16px 18px;
 
   background-color: ${theme.colors.background.primary};
 `;

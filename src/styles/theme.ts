@@ -12,6 +12,10 @@ export const theme = {
             black: '#29292E',
             pink: '#F292A9',
         },
+        border: {
+            primary: '#D9D9D9',
+            secondary: '#E2E2E2',
+        },
     },
     fonts: {
         regular: 'Roboto_400Regular',

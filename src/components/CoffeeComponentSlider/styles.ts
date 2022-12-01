@@ -3,7 +3,7 @@ import {theme} from '../../styles/theme';
 
 export const CoffeComponent = styled.View`
     width: 104px;
-    height: 183px;
+    height: 100%;
 
     background-color: ${theme.colors.background.secondary};
 
