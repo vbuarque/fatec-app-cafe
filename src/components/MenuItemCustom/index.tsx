@@ -10,14 +10,14 @@ SubtitleItem,
 CashItem,
 } from './styles'
 
-type CooffeeItemProps = {
+type MenuItemProps = {
     title?: string;
     subtitle?: string;
     cash?: string;
-    image?: any;
+    image?: string;
 }
 
-export default function CoffeeItem({ title, cash, image, subtitle }: CooffeeItemProps) {
+export default function MenuItemCustom({ title, cash, image, subtitle }: MenuItemProps) {
   return (
     <Container>
       <LeftSide>

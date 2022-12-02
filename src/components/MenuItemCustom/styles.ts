@@ -11,6 +11,7 @@ export const Container = styled.View`
 
   background: ${theme.colors.background.primary};
 
+  border: 1px solid ${theme.colors.border.primary};
   border-radius: 30px;
 `;
 
@@ -19,15 +20,19 @@ export const LeftSide = styled.View`
 `;
 
 export const ContentLeftSide = styled.View`
-  flex: 1;
+    flex: 1;
     flex-direction: row;
     align-items: center;
+
+    
 `;
 
 export const ImageItem = styled.Image`
     width: 100px;
     height: 100px;
     border-radius: 20px;
+
+    border: 1px solid ${theme.colors.primary.pink};
 `;
 
 export const RightSide = styled.View`

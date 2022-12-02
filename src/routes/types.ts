@@ -6,6 +6,10 @@ export type RootStackParamList = {
   Profile: undefined;
   Pets: undefined;
   Coffee: undefined;
+  FoodPets: undefined;
+  ToysPets: undefined;
+  HealthPets: undefined;
+  ClothesPets: undefined;
 };
 
 export type RootTabParamList = {

@@ -16,19 +16,15 @@ import { CategoriesButton } from '../../components/CategoriesButton';
 import { CoffeeComponentSlider } from '../../components/CoffeeComponentSlider';
 
 const Img = require("../../assets/images/imgMockProduct.jpg");
-const Img2 = require("../../assets/images/CoffeeMockImage.png");
+const Img2 = require("../../assets/images/Coffee_Cup_Mockup_1.jpg");
 
 export function Home() {
-  const navigation = useNavigation()
-
-  function handleNavigateToCoffee() {
-    navigation.navigate('Coffee')
-  }
-
+  const navigation = useNavigation();
+  
   return (
       <Container>
         <Header>
-          <TextUserName>Ola Vinicius</TextUserName>
+          <TextUserName>Olá, Vinicius</TextUserName>
           <Avatar borderColor={'#F292A9'} borderWidth={2}>VB</Avatar>
         </Header>
         <ImageProduct source={Img} />

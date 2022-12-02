@@ -8,6 +8,10 @@ export declare global {
       Profile: undefined;
       Pets: undefined;
       Coffee: undefined;
+      FoodPets: undefined;
+      ToysPets: undefined;
+      HealthPets: undefined;
+      ClothesPets: undefined;
     }
   }
 }

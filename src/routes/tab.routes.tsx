@@ -15,7 +15,7 @@ export default function ShowBottomTabs() {
         unmountOnBlur: true,
         tabBarShowLabel: false,
         tabBarStyle: {
-          height: 50,
+          height: 60,
         },
       }}
     >

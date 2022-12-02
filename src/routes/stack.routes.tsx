@@ -7,7 +7,11 @@ import {
   Pets,
   Profile,
   Login,
-  Coffee
+  Coffee,
+  FoodPets,
+  ToysPets,
+  HealthPets,
+  ClothesPets
 } from '../screens';
 
 import ShowBottomTabs from './tab.routes';
@@ -24,6 +28,10 @@ export default function StackRoutes() {
       <Screen name="Profile" component={Profile} />
       <Screen name="Pets" component={Pets} />
       <Screen name="Coffee" component={Coffee} />
+      <Screen name="FoodPets" component={FoodPets} />
+      <Screen name="ToysPets" component={ToysPets}/>
+      <Screen name="HealthPets" component={HealthPets} />
+      <Screen name="ClothesPets" component={ClothesPets} />
     </Navigator>
   );
 }
