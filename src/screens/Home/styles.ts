@@ -27,7 +27,7 @@ export const ImageProduct = styled.Image`
     width: 100%;
     height: 144px;
 
-    border: 1px solid ${theme.colors.primary};
+    border: 1px solid ${theme.colors.primary.pink};
     border-radius: 8px;
 
     margin: 24px 0 24px 0;

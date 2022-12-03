@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Text } from "native-base";
+
 import {
   Container,
-  Image,
+  ImageLogin,
   ContainerImage,
   StyledButtonGoogle,
   StyledButtonFacebook,
@@ -10,29 +12,24 @@ import {
   ContainerText,
   TextPink,
   MainText,
-} from "./styles";
+} from "./styles"
 
 import Logo from "../../assets/icons/LogoMiau.svg";
-
 import ImageCat from "../../assets/images/catImageLogin.png";
 import GoogleLogo from "../../assets/icons/googleIcon.svg";
 import FacebookLogo from "../../assets/icons/facebookIcon.svg";
 
-import { Text } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useAuth } from "../../hooks/useAuth";
+import { Button } from "native-base";
 
 export function Login() {
-  const navigation = useNavigation();
-
-  function openScreen() {
-    navigation.navigate('Home');
-  }
+  const { signIn, appIsLoading } = useAuth();
 
   return (
-    <Container>
+   <Container>
       <Logo />
       <ContainerImage>
-        <Image source={ImageCat} />
+        <ImageLogin source={ImageCat}/>
       </ContainerImage>
 
       <ContainerText>
@@ -50,10 +47,23 @@ export function Login() {
       </ContainerText>
 
       <ContainerButton>
-        <StyledButtonGoogle onPress={openScreen}>
+        {/* <StyledButtonGoogle onPress={signIn}>
           <GoogleLogo />
           <Text>Faça login no Google</Text>
-        </StyledButtonGoogle>
+        </StyledButtonGoogle> */}
+        <Button 
+          leftIcon={<GoogleLogo/>}
+          borderRadius={3}
+          bgColor={'#ffffff'}
+          borderColor={'#e1e1e1'}
+          borderWidth={1}
+          isLoading={appIsLoading}
+          _spinner={{ color: 'red.500' }}
+          marginBottom={2}
+          onPress={signIn}
+        >
+          <Text color={'#29292e'}>Faça login no Google</Text>
+        </Button>
 
         <StyledButtonFacebook>
           <FacebookLogo />

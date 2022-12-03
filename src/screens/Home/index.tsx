@@ -14,18 +14,23 @@ import { Avatar } from "native-base";
 import { Coffee, Cat, Cookie, Heart } from 'phosphor-react-native';
 import { CategoriesButton } from '../../components/CategoriesButton';
 import { CoffeeComponentSlider } from '../../components/CoffeeComponentSlider';
+import { useAuth } from "../../hooks/useAuth";
+import { getFirstName } from '../../utils/getFirstName';
 
-const Img = require("../../assets/images/imgMockProduct.jpg");
+const Img = require("../../assets/images/MockImageProduct.webp");
 const Img2 = require("../../assets/images/Coffee_Cup_Mockup_1.jpg");
 
 export function Home() {
+  const {user} = useAuth();
+  const firstName = getFirstName(user.name);
+
   const navigation = useNavigation();
   
   return (
       <Container>
         <Header>
-          <TextUserName>Olá, Vinicius</TextUserName>
-          <Avatar borderColor={'#F292A9'} borderWidth={2}>VB</Avatar>
+          <TextUserName>Olá, {firstName}</TextUserName>
+          <Avatar borderColor={'#F292A9'} borderWidth={2} source={{uri: user.avatarUrl}}>VB</Avatar>
         </Header>
         <ImageProduct source={Img} />
         <Head>Categorias</Head>

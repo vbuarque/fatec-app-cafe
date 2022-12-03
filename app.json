@@ -1,28 +1,11 @@
 {
-  "name": "miauApp",
-  "displayName": "miauApp",
-  "packagerOpts": {
-    "config": "metro.config.js",
-    "sourceExts": [
-      "js",
-      "jsx",
-      "ts",
-      "tsx",
-      "json",
-      "svg",
-      "png",
-      "jpg",
-      "jpeg",
-      "gif",
-      "ttf",
-      "otf",
-      "mp4",
-      "webm",
-      "wav",
-      "mp3",
-      "m4a",
-      "aac",
-      "oga"
-    ]
+  "expo": {
+    "name": "MiauApp",
+    "slug": "MiauApp",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "scheme": "mycoolredirect"
   }
 }

@@ -22,7 +22,7 @@ export default function MenuItemCustom({ title, cash, image, subtitle }: MenuIte
     <Container>
       <LeftSide>
         <ContentLeftSide>
-          <ImageItem source={image} />
+          <ImageItem source={{uri: image}} />
         </ContentLeftSide>
       </LeftSide>
 

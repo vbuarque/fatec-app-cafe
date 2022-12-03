@@ -1,14 +1,26 @@
 import React from 'react';
-import { NativeBaseProvider } from "native-base";
 import {StatusBar} from 'react-native';
-import Routes from './routes';
+import { NativeBaseProvider } from "native-base";
 
+import { useFonts, Roboto_400Regular, Roboto_500Medium, Roboto_700Bold } from '@expo-google-fonts/roboto';
+
+import Routes from './routes';
+import { Loading } from './components/Loading';
+import { AuthContextProvider } from './context/authContext';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Roboto_400Regular,
+    Roboto_500Medium,
+    Roboto_700Bold
+  });
+
   return (
     <NativeBaseProvider>
-      <Routes />
-      <StatusBar barStyle="dark-content" backgroundColor={'#F8f8f8'} />
+      <AuthContextProvider>
+        {fontsLoaded ? <Routes /> : <Loading/>}
+      </AuthContextProvider>
+      <StatusBar barStyle="dark-content"  backgroundColor="#F8f8f8" />
     </NativeBaseProvider>
   );
 }

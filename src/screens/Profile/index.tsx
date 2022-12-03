@@ -8,44 +8,38 @@ import {
   ContainerUserData,
   UserDataName,
   UserDataEmail,
-  UserDataBirthDate,
-  UserDataPhone,
   UserDataWithIcon,
 } from './styles';
 
-import { User, At, Cake, Phone } from 'phosphor-react-native';
-
-const ImgProfile = require('../../assets/images/MockImageProfileUser.jpg');
+import { User, At } from 'phosphor-react-native';
+import { useAuth } from '../../hooks/useAuth';
+import { Button, Text } from 'native-base';
 
 export function Profile() {
+  const {user, signOut} = useAuth();
+  
   return (
     <Container>
       <CustomHeader title='Perfil' />
       <ProfileContent>
         <ContainerProfile>
-          <ProfileImage source={ImgProfile} />
+          <ProfileImage source={{uri: user.avatarUrl}} />
         </ContainerProfile>
 
         <ContainerUserData>
           <UserDataWithIcon>
             <User size={24} color='#29292e' />
-            <UserDataName>Vinicius Buarque</UserDataName>
+            <UserDataName>{user.name}</UserDataName>
           </UserDataWithIcon>
 
           <UserDataWithIcon>
             <At size={24} color='#29292e' />
-            <UserDataEmail>vbuarquegusmao@gmail.com</UserDataEmail>
+            <UserDataEmail>{user.email}</UserDataEmail>
           </UserDataWithIcon>
 
-          <UserDataWithIcon>
-            <Cake size={24} color='#29292e' />
-            <UserDataBirthDate>31/05/2000</UserDataBirthDate>
-          </UserDataWithIcon>
-
-          <UserDataWithIcon>
-            <Phone size={24} color='#29292e' />
-            <UserDataPhone>(12) 98222-9518</UserDataPhone>
-          </UserDataWithIcon>
+          <Button onPress={signOut}>
+            <Text>Deslogar</Text>
+          </Button>
 
         </ContainerUserData>
       </ProfileContent>

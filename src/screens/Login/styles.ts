@@ -1,5 +1,9 @@
 import styled from "styled-components/native";
+import { Button } from "native-base";
 import {theme} from '../../styles/theme';
+interface ButtonGoogleProps {
+  isLoading: boolean;
+}
 
 export const Container = styled.View`
   flex: 1;
@@ -10,14 +14,14 @@ export const Container = styled.View`
   background-color: ${theme.colors.background.primary};
 `;
 
-export const Image = styled.Image`
+export const ImageLogin = styled.Image`
   width: 256px;
   height: 277px;
 `;
 
 export const ContainerImage = styled.View``;
 
-export const StyledButtonGoogle = styled.TouchableOpacity`
+export const StyledButtonGoogle = styled(Button)`
   align-items: center;
   flex-direction: row;
   justify-content: space-between;

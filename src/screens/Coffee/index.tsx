@@ -11,34 +11,9 @@ export function Coffee() {
     <>
     <CustomHeader title='Cafés'/>
     <Scroll>
-      <Container>
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
+      <Container> 
+        <MenuItemCustom image={'https://cdn.pixabay.com/photo/2017/06/14/03/00/coffe-2400874__340.jpg'} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
 
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Café feito de expresso com um pouco de café e uma pitada de café' title='Café expresso'/>
         
       </Container>
     </Scroll>

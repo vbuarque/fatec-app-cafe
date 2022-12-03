@@ -20,7 +20,7 @@ const { Navigator, Screen } = createNativeStackNavigator<RootStackParamList>();
 
 export default function StackRoutes() {
   return (
-    <Navigator initialRouteName='Login' screenOptions={{ headerShown: false }}>
+    <Navigator initialRouteName='Home' screenOptions={{ headerShown: false }}>
       <Screen name="Login" component={Login} />
       <Screen name="Home" component={ShowBottomTabs} />
       <Screen name="Adopt" component={Adopt} />
