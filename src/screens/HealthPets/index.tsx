@@ -1,43 +1,44 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import MenuItemCustom from '../../components/MenuItemCustom';
 import CustomHeader from '../../components/CustomHeader';
 import { Container, Scroll } from './styles';
+import api from '../../services/api';
+import { URI } from '../../services/uri';
 
-const Img2 = require("../../assets/images/MockImagePetVet2.webp");
+type HealthType = {
+  imageUrl: string;
+  name: string;
+  description: string;
+  money: String;
+}
 
 export function HealthPets() {
+  const [healths, setHealths] = useState<HealthType[]>([]);
+
+  useEffect(() => {
+    api
+      .get(URI.PET_HEALTH)
+      .then(response => {
+        setHealths(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
+
     return (
         <>
         <CustomHeader title='Saúde do pet'/>
         <Scroll>
           <Container>
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-
-            <MenuItemCustom image={Img2} cash='R$ 13,99' subtitle='Kit de vitaminas especiais para seu Pet ser mais feliz' title='Kit Vitaminas'/>
-            
+            {healths.map((health: HealthType) => (
+              <MenuItemCustom
+              image={health.imageUrl}
+              cash={'R$' + ' ' + health.money}
+              subtitle={health.description}
+              title={health.name}
+            />
+            ))}
           </Container>
         </Scroll>
         </>

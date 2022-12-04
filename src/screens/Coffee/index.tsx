@@ -5,7 +5,7 @@ import { Container, Scroll } from './styles';
 import api from '../../services/api';
 import { URI } from '../../services/uri';
 
-type CoffeeProps = {
+type CoffeeType = {
   name: string;
   money: number;
   description: string;
@@ -13,11 +13,11 @@ type CoffeeProps = {
 }
 
 export function Coffee() {
-  const [coffees, setCoffee] = useState<CoffeeProps[]>([]);
+  const [coffees, setCoffee] = useState<CoffeeType[]>([]);
 
   useEffect(() => {
     api
-      .get(URI.COFFEE)
+      .get(URI.COFFEE_SHOP)
       .then(response => {
         setCoffee(response.data);
       })
@@ -31,7 +31,7 @@ export function Coffee() {
       <CustomHeader title='Cafés' />
       <Scroll>
         <Container>
-          {coffees.map((coffee: any) => (
+          {coffees.map((coffee: CoffeeType) => (
             <MenuItemCustom
             cash={'R$' + ' ' + coffee.money}
             image={coffee.imageUrl}

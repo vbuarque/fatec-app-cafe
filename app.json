@@ -6,6 +6,11 @@
     "assetBundlePatterns": [
       "**/*"
     ],
-    "scheme": "mycoolredirect"
+    "scheme": "mycoolredirect",
+    "extra": {
+      "eas": {
+        "projectId": "44339361-1a84-4c73-a3ea-60407ef2cb8c"
+      }
+    }
   }
 }

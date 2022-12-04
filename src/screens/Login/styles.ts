@@ -1,9 +1,5 @@
 import styled from "styled-components/native";
-import { Button } from "native-base";
 import {theme} from '../../styles/theme';
-interface ButtonGoogleProps {
-  isLoading: boolean;
-}
 
 export const Container = styled.View`
   flex: 1;
@@ -20,46 +16,6 @@ export const ImageLogin = styled.Image`
 `;
 
 export const ContainerImage = styled.View``;
-
-export const StyledButtonGoogle = styled(Button)`
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-
-  width: 100%;
-  height: 48px;
-  
-  background-color: #FFFFFF;
-
-  border-radius: 4px;
-  border: 1px solid #e1e1e1;
-
-  margin-bottom: 10px;
-  padding: 0 20px;
-  `;
-
-export const StyledButtonFacebook = styled.TouchableOpacity`
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-
-width: 100%;
-height: 48px;
-
-background-color: #1877F2;
-
-border-radius: 4px;
-border: 1px solid #e1e1e1;
-
-color: #FFFFFF;
-
-margin-bottom: 10px;
-padding: 0 20px;
-`;
-
-export const StyledText = styled.Text`
-  color: #ffffff;
-`;
 
 export const ContainerButton = styled.View`
   width: 100%;

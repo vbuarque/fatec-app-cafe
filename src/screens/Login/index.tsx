@@ -1,13 +1,10 @@
-import React, { useContext } from "react";
-import { Text } from "native-base";
+import React from "react";
+import { HStack, Text } from "native-base";
 
 import {
   Container,
   ImageLogin,
   ContainerImage,
-  StyledButtonGoogle,
-  StyledButtonFacebook,
-  StyledText,
   ContainerButton,
   ContainerText,
   TextPink,
@@ -26,10 +23,10 @@ export function Login() {
   const { signIn, appIsLoading } = useAuth();
 
   return (
-   <Container>
+    <Container>
       <Logo />
       <ContainerImage>
-        <ImageLogin source={ImageCat}/>
+        <ImageLogin source={ImageCat} />
       </ContainerImage>
 
       <ContainerText>
@@ -37,7 +34,7 @@ export function Login() {
           <TextPink>Tome um cafézinho</TextPink> enquanto
         </MainText>
 
-        <MainText> 
+        <MainText>
           faz <TextPink>carinho</TextPink> nos
         </MainText>
 
@@ -47,28 +44,41 @@ export function Login() {
       </ContainerText>
 
       <ContainerButton>
-        {/* <StyledButtonGoogle onPress={signIn}>
-          <GoogleLogo />
-          <Text>Faça login no Google</Text>
-        </StyledButtonGoogle> */}
-        <Button 
-          leftIcon={<GoogleLogo/>}
+        <Button
           borderRadius={3}
           bgColor={'#ffffff'}
           borderColor={'#e1e1e1'}
           borderWidth={1}
           isLoading={appIsLoading}
+          isLoadingText={'Carregando...'}
+          _text={{ color: 'red.500' }}
           _spinner={{ color: 'red.500' }}
           marginBottom={2}
           onPress={signIn}
         >
-          <Text color={'#29292e'}>Faça login no Google</Text>
+          <HStack 
+          alignItems="center"
+          space={130}
+          >
+            <GoogleLogo />
+            <Text color={'#29292e'}>Faça login no Google</Text>
+          </HStack>
         </Button>
 
-        <StyledButtonFacebook>
+        <Button
+          _icon={{ color: 'white' }}
+          borderRadius={3}
+          bgColor={'#1877F2'}
+          borderColor={'#e1e1e1'}
+          borderWidth={1}
+          _spinner={{ color: 'red.500' }}
+          marginBottom={2}
+        >
+          <HStack space={100} alignItems="center">
           <FacebookLogo />
-          <StyledText>Continuar com o facebook</StyledText>
-        </StyledButtonFacebook>
+            <Text color={'#ffffff'}>Continuar com o Facebook</Text>
+          </HStack>
+        </Button>
       </ContainerButton>
     </Container>
   );

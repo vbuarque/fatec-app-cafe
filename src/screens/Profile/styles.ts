@@ -29,7 +29,7 @@ export const ProfileImage = styled.Image`
 
     border-radius: 999px;
 
-    border: 3px solid ${theme.colors.border.secondary};
+    border: 3px solid ${theme.colors.background.primary};
 `;
 
 export const UserDataWithIcon = styled.View`
@@ -50,7 +50,7 @@ export const ContainerUserData = styled.View`
     justify-content: center;
 
     width: 100%;
-    height:60%;
+    height:50%;
 
     padding: 0 20px;
 `;
@@ -77,4 +77,15 @@ export const UserDataPhone = styled.Text`
     font-size: 18px;
     font-weight: ${theme.fonts.regular};
     color: ${theme.colors.text.black};
+`;
+
+
+export const ContainerButton = styled.View`
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height:10%;
+
+    padding: 0 20px;
 `;

@@ -1,50 +1,44 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import MenuItemCustom from '../../components/MenuItemCustom';
 import CustomHeader from '../../components/CustomHeader';
 import { Container, Scroll } from './styles';
+import api from '../../services/api';
+import { URI } from '../../services/uri';
 
-
-const Img2 = require("../../assets/images/mock-up-dog-cat-food.webp");
+type FoodType = {
+  imageUrl: string;
+  name: string;
+  description: string;
+  money: String;
+}
 
 export function FoodPets() {
+  const [foods, setFoods] = useState<FoodType[]>([]);
+
+  useEffect(() => {
+    api
+      .get(URI.PET_FOOD)
+      .then(response => {
+        setFoods(response.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <>
     <CustomHeader title='Comidas e petiscos'/>
     <Scroll>
       <Container>
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
-
-        <MenuItemCustom image={Img2} cash='R$ 27,99' subtitle='Ração especial para um pet especial, rico em vitaminas e cheio de qualidade' title='Ração especial'/>
+        {foods.map((food: FoodType) => (
+          <MenuItemCustom
+          image={food.imageUrl}
+          cash={'R$' + ' ' + food.money}
+          subtitle={food.description}
+          title={food.name}
+        />
+        ))}
       </Container>
     </Scroll>
     </>
