@@ -1,5 +1,5 @@
 export enum URI {
-    CANDIES = "http://localhost:5000/candies",
-    COFFEE = "http://localhost:5000/coffee",
-    CATS = "http://localhost:5000/cats",
+    CANDIES = "https://miau-app-back.onrender.com/api/candies",
+    COFFEE = "https://miau-app-back.onrender.com/api/coffee",
+    CATS = "https://miau-app-back.onrender.com/api/cats",
   }

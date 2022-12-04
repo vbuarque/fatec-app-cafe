@@ -5,8 +5,6 @@ import { Container, Scroll } from './styles';
 import api from '../../services/api';
 import { URI } from '../../services/uri';
 
-const Img2 = require("../../assets/images/Coffee_Cup_Mockup_1.jpg");
-
 type CoffeeProps = {
   name: string;
   money: number;
@@ -35,7 +33,7 @@ export function Coffee() {
         <Container>
           {coffees.map((coffee: any) => (
             <MenuItemCustom
-            cash={'R$' + coffee.money}
+            cash={'R$' + ' ' + coffee.money}
             image={coffee.imageUrl}
             title={coffee.name}
             subtitle={coffee.description}
