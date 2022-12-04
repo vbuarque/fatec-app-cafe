@@ -4,6 +4,8 @@ import CustomHeader from '../../components/CustomHeader';
 import { Container, Scroll } from './styles';
 import api from '../../services/api';
 import { URI } from '../../services/uri';
+import { Heading, HStack, Spinner } from 'native-base';
+import { LoadingItems } from '../../components/LoadingItems';
 
 type CoffeeType = {
   name: string;
@@ -14,11 +16,13 @@ type CoffeeType = {
 
 export function Coffee() {
   const [coffees, setCoffee] = useState<CoffeeType[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     api
       .get(URI.COFFEE_SHOP)
       .then(response => {
+        setLoading(false);
         setCoffee(response.data);
       })
       .catch(error => {
@@ -29,18 +33,23 @@ export function Coffee() {
   return (
     <>
       <CustomHeader title='Cafés' />
-      <Scroll>
-        <Container>
-          {coffees.map((coffee: CoffeeType) => (
-            <MenuItemCustom
-            cash={'R$' + ' ' + coffee.money}
-            image={coffee.imageUrl}
-            title={coffee.name}
-            subtitle={coffee.description}
-            />
-          ))}
-        </Container>
-      </Scroll>
+      {loading ? (
+        <LoadingItems title='Carregando cafés...' />
+      ) :
+        (
+          <Scroll>
+            <Container>
+              {coffees.map((coffee: CoffeeType) => (
+                <MenuItemCustom
+                  cash={'R$' + ' ' + coffee.money}
+                  image={coffee.imageUrl}
+                  title={coffee.name}
+                  subtitle={coffee.description}
+                />
+              ))}
+            </Container>
+          </Scroll>
+        )}
     </>
   );
 }

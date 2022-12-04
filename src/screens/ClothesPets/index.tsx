@@ -4,6 +4,8 @@ import CustomHeader from '../../components/CustomHeader';
 import { Container, Scroll } from './styles';
 import api from '../../services/api';
 import { URI } from '../../services/uri';
+import { Heading, HStack, Spinner } from 'native-base';
+import { LoadingItems } from '../../components/LoadingItems';
 
 type ClothesType = {
   imageUrl: string;
@@ -14,33 +16,40 @@ type ClothesType = {
 
 export function ClothesPets() {
   const [clothes, setClothes] = useState<ClothesType[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     api
       .get(URI.PET_CLOTHES)
       .then(response => {
+        setLoading(false);
         setClothes(response.data);
       })
       .catch(error => {
         console.log(error);
       });
   }, []);
-  
-    return (
-        <>
-        <CustomHeader title='Roupas e acessórios'/>
+
+  return (
+    <>
+      <CustomHeader title='Roupas e acessórios' />
+      {loading ? (
+        <LoadingItems title='Carregando brinquedos e acessórios...' />
+      ) : (
         <Scroll>
           <Container>
+
             {clothes.map((clothes: ClothesType) => (
               <MenuItemCustom
-              image={clothes.imageUrl}
-              cash={'R$' + ' ' + clothes.money}
-              subtitle={clothes.description}
-              title={clothes.name}
-            />
+                image={clothes.imageUrl}
+                cash={'R$' + ' ' + clothes.money}
+                subtitle={clothes.description}
+                title={clothes.name}
+              />
             ))}
           </Container>
         </Scroll>
-        </>
-    )
+      )}
+    </>
+  )
 }

@@ -6,6 +6,8 @@ import { URI } from '../../services/uri';
 import MenuItemCustom from '../../components/MenuItemCustom';
 import CustomHeader from '../../components/CustomHeader';
 import { Container, Scroll } from './styles';
+import { HStack, Spinner, Heading } from 'native-base';
+import { LoadingItems } from '../../components/LoadingItems';
 
 type ToysProps = {
   name: string;
@@ -16,11 +18,13 @@ type ToysProps = {
 
 export function ToysPets() {
   const [toys, setToys] = useState<ToysProps[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     api
       .get(URI.PET_TOYS)
       .then(response => {
+        setLoading(false);
         setToys(response.data);
       })
       .catch(error => {
@@ -29,21 +33,25 @@ export function ToysPets() {
   }, []);
 
 
-    return (
-        <>
-        <CustomHeader title='Brinquedos e acessórios'/>
+  return (
+    <>
+      <CustomHeader title='Brinquedos e acessórios' />
+      {loading ? (
+        <LoadingItems title='Carregando brinquedos e acessórios...' />
+      ) : (
         <Scroll>
           <Container>
-          {toys.map((toy: ToysProps) => (
-            <MenuItemCustom
-            cash={'R$' + ' ' + toy.money}
-            image={toy.imageUrl}
-            title={toy.name}
-            subtitle={toy.description}
-            />
-          ))}
+            {toys.map((toy: ToysProps) => (
+              <MenuItemCustom
+                cash={'R$' + ' ' + toy.money}
+                image={toy.imageUrl}
+                title={toy.name}
+                subtitle={toy.description}
+              />
+            ))}
           </Container>
         </Scroll>
-        </>
-    )
+      )}
+    </>
+  )
 }

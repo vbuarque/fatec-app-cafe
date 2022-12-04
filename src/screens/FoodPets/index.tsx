@@ -5,6 +5,8 @@ import { Container, Scroll } from './styles';
 import api from '../../services/api';
 import { URI } from '../../services/uri';
 
+import { LoadingItems } from '../../components/LoadingItems';
+
 type FoodType = {
   imageUrl: string;
   name: string;
@@ -14,11 +16,13 @@ type FoodType = {
 
 export function FoodPets() {
   const [foods, setFoods] = useState<FoodType[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     api
       .get(URI.PET_FOOD)
       .then(response => {
+        setLoading(false);
         setFoods(response.data);
       })
       .catch(error => {
@@ -29,18 +33,22 @@ export function FoodPets() {
   return (
     <>
     <CustomHeader title='Comidas e petiscos'/>
-    <Scroll>
+    {loading ? 
+    (<LoadingItems title='Carregando comidas e petiscos...'/>)
+    :
+    (<Scroll>
       <Container>
-        {foods.map((food: FoodType) => (
-          <MenuItemCustom
-          image={food.imageUrl}
-          cash={'R$' + ' ' + food.money}
-          subtitle={food.description}
-          title={food.name}
-        />
-        ))}
+      
+            {foods.map((food: FoodType) => (
+              <MenuItemCustom
+              image={food.imageUrl}
+              cash={'R$' + ' ' + food.money}
+              subtitle={food.description}
+              title={food.name}
+            />
+            ))}
       </Container>
-    </Scroll>
+    </Scroll>)}
     </>
   );
 }

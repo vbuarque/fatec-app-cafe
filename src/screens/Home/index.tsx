@@ -67,7 +67,7 @@ export function Home() {
           <ButtonWidth>
             <CategoriesButton
               icon={Heart}
-              title={'Outros'}
+              title={'Adoção'}
 
               onPress={() => navigation.navigate('Adopt')}
             />

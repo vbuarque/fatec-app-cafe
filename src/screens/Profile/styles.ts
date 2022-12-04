@@ -15,8 +15,7 @@ export const ProfileContent = styled.View`
 
 export const ContainerProfile = styled.View`
     align-items: center;
-    width: 100%;
-    height:40%;
+    height: 40%;
     background: ${theme.colors.primary.pink};
 `;
 
@@ -27,7 +26,7 @@ export const ProfileImage = styled.Image`
     width: 100px;
     height: 100px;
 
-    border-radius: 999px;
+    border-radius: 10px;
 
     border: 3px solid ${theme.colors.background.primary};
 `;

@@ -4,9 +4,8 @@ import MenuItemCustom from "../../components/MenuItemCustom";
 import api from "../../services/api";
 import { URI } from "../../services/uri";
 import { Container, Scroll } from "./styles";
-
-const Img2 = require("../../assets/images/MockImageCookie.jpg");
-
+import { Heading, HStack, Spinner } from 'native-base';
+import { LoadingItems } from "../../components/LoadingItems";
 
 type CandysType = {
   imageUrl: string;
@@ -17,11 +16,13 @@ type CandysType = {
 
 export function CandyStore() {
   const [candys, setCandys] = useState<CandysType[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     api
       .get(URI.CANDY_SHOP)
       .then(response => {
+        setLoading(false);
         setCandys(response.data);
       })
       .catch(error => {
@@ -32,18 +33,22 @@ export function CandyStore() {
   return (
     <>
       <CustomHeader title="Doces" />
-      <Scroll>
-        <Container>
-          {candys.map((candy: CandysType) => (
+      {loading ? (
+        <LoadingItems title='Carregando doces...' />
+      ) : (
+        <Scroll>
+          <Container>
+            {candys.map((candy: CandysType) => (
               <MenuItemCustom
-              image={candy.imageUrl}
-              cash={'R$' + ' ' + candy.money}
-              subtitle={candy.description}
-              title={candy.name}
-            />
-          ))}
-        </Container>
-      </Scroll>
+                image={candy.imageUrl}
+                cash={'R$' + ' ' + candy.money}
+                subtitle={candy.description}
+                title={candy.name}
+              />
+            ))}
+          </Container>
+        </Scroll>
+      )}
     </>
   );
 }
