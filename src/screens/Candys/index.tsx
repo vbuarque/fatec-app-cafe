@@ -12,6 +12,7 @@ type CandysType = {
   name: string;
   description: string;
   money: String;
+  id: number;
 }
 
 export function CandyStore() {
@@ -38,8 +39,9 @@ export function CandyStore() {
       ) : (
         <Scroll>
           <Container>
-            {candys.map((candy: CandysType) => (
+            {candys.map((candy: CandysType, index) => (
               <MenuItemCustom
+                key={index}
                 image={candy.imageUrl}
                 cash={'R$' + ' ' + candy.money}
                 subtitle={candy.description}

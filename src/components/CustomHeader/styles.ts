@@ -12,15 +12,12 @@ export const Header = styled.View`
     justify-content: space-between;
     align-items: center;
 
-    padding: 0 20px;
+    padding: 40px 20px 20px 20px;
     width: 100%;
-    height: 10%;
 
     border-bottom-width: 1px;
     border-bottom-color: ${theme.colors.border.primary};
     background-color: ${theme.colors.background.primary};
-    
-    text-align: center;
 `;
 
 export const HeaderTitle = styled.Text`

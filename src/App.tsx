@@ -20,7 +20,7 @@ export default function App() {
       <AuthContextProvider>
         {fontsLoaded ? <Routes /> : <Loading/>}
       </AuthContextProvider>
-      <StatusBar barStyle="dark-content"  backgroundColor="#F8f8f8" />
+      <StatusBar barStyle="dark-content" translucent backgroundColor="transparent" />
     </NativeBaseProvider>
   );
 }

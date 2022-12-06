@@ -4,7 +4,6 @@ import CustomHeader from '../../components/CustomHeader';
 import { Container, Scroll } from './styles';
 import api from '../../services/api';
 import { URI } from '../../services/uri';
-import { Heading, HStack, Spinner } from 'native-base';
 import { LoadingItems } from '../../components/LoadingItems';
 
 type CoffeeType = {
@@ -12,6 +11,7 @@ type CoffeeType = {
   money: number;
   description: string;
   imageUrl: string;
+  id: number;
 }
 
 export function Coffee() {
@@ -39,8 +39,9 @@ export function Coffee() {
         (
           <Scroll>
             <Container>
-              {coffees.map((coffee: CoffeeType) => (
+              {coffees.map((coffee: CoffeeType, index) => (
                 <MenuItemCustom
+                  key={index}
                   cash={'R$' + ' ' + coffee.money}
                   image={coffee.imageUrl}
                   title={coffee.name}

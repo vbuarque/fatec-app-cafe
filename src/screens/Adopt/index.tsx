@@ -4,13 +4,14 @@ import MenuItemCustom from '../../components/MenuItemCustom';
 import { Container, Scroll } from './styles';
 import api from '../../services/api';
 import { URI } from '../../services/uri';
-import { Heading, HStack, Spinner } from 'native-base';
 import { LoadingItems } from '../../components/LoadingItems';
+import AdoptCard from '../../components/AdoptCard';
 
 type AdoptType = {
   imageUrl: string;
   name: string;
   description: string;
+  id: number;
 }
 
 export function Adopt() {
@@ -39,12 +40,14 @@ export function Adopt() {
           ) : (
       <Scroll>
           <Container>
-            {adopt.map((adopt: AdoptType) => (
-              <MenuItemCustom 
-              image={adopt.imageUrl}
-              title={adopt.name}
-              subtitle={adopt.description}/>
-          ))}
+           {adopt.map((adopt: AdoptType, index) => (
+              <AdoptCard
+                key={index}
+                image={adopt.imageUrl}
+                title={adopt.name}
+                subtitle={adopt.description}
+              />
+           ))}
           </Container>
         </Scroll>
         )}

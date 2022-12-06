@@ -40,7 +40,7 @@ export const RightSide = styled.View`
 export const ContentRightSide = styled.View`
     flex: 1;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 `;
 
 export const TitleItem = styled.Text`

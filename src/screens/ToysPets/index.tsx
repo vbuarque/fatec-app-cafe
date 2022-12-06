@@ -6,7 +6,6 @@ import { URI } from '../../services/uri';
 import MenuItemCustom from '../../components/MenuItemCustom';
 import CustomHeader from '../../components/CustomHeader';
 import { Container, Scroll } from './styles';
-import { HStack, Spinner, Heading } from 'native-base';
 import { LoadingItems } from '../../components/LoadingItems';
 
 type ToysProps = {
@@ -14,6 +13,7 @@ type ToysProps = {
   money: string;
   description: string;
   imageUrl: string;
+  id: number;
 }
 
 export function ToysPets() {
@@ -41,8 +41,9 @@ export function ToysPets() {
       ) : (
         <Scroll>
           <Container>
-            {toys.map((toy: ToysProps) => (
+            {toys.map((toy: ToysProps, index) => (
               <MenuItemCustom
+                key={index}
                 cash={'R$' + ' ' + toy.money}
                 image={toy.imageUrl}
                 title={toy.name}

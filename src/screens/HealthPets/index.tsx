@@ -11,6 +11,7 @@ type HealthType = {
   name: string;
   description: string;
   money: String;
+  id: number;
 }
 
 export function HealthPets() {
@@ -37,8 +38,9 @@ export function HealthPets() {
         :
         (<Scroll>
           <Container>
-            {healths.map((health: HealthType) => (
+            {healths.map((health: HealthType, index) => (
             <MenuItemCustom
+              key={index}
               image={health.imageUrl}
               cash={'R$' + ' ' + health.money}
               subtitle={health.description}

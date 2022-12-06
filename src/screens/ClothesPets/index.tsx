@@ -12,6 +12,7 @@ type ClothesType = {
   name: string;
   description: string;
   money: String;
+  id: number;
 }
 
 export function ClothesPets() {
@@ -39,8 +40,9 @@ export function ClothesPets() {
         <Scroll>
           <Container>
 
-            {clothes.map((clothes: ClothesType) => (
+            {clothes.map((clothes: ClothesType, index) => (
               <MenuItemCustom
+                key={index}
                 image={clothes.imageUrl}
                 cash={'R$' + ' ' + clothes.money}
                 subtitle={clothes.description}

@@ -5,7 +5,7 @@ export const Container = styled.View`
     justify-content: center;
     align-items: center;
 
-    padding: 100px 24px 0px 24px;
+    padding: 110px 24px 0px 24px;
 `;
 
 export const Scroll = styled.ScrollView``;
