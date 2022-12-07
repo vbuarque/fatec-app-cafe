@@ -11,15 +11,15 @@
 
 Seu cardápio na tela do seu celular!
 
-- Projeto desenvolvido para a disciplina de Programação para Dispositivos Móveis na FATEC de São José dos Campos
+- Projeto desenvolvido para a disciplina de Programação para Dispositivos Móveis na FATEC de São José dos Campos, aplicação realizada no intuito de criar um cardápio online para uma cafeteria.
 
 <div align="center">
-  <img alt="Demonstração do aplicativo Miau Café" src="..." width="230px" />
+  <img alt="Demonstração do aplicativo Miau Café" src="./src/assets/images/Capa.png" width="230px" />
 </div>
 
 ### :hammer_and_wrench: Tecnologias e ferramentas
 
-- [Figma](http://www.figma.com/), [React Native](https://reactnative.dev/), [TypeScript](https://www.typescriptlang.org/)
+- [Figma](http://www.figma.com/), [React Native](https://reactnative.dev/), [TypeScript](https://www.typescriptlang.org/), [Expo](https://docs.expo.dev/)
 
 <span id="requisitos">
 
